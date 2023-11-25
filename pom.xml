@@ -40,6 +40,9 @@
                             <value>io.qameta.allure.junit4.AllureJunit4</value>
                         </property>
                     </properties>
+                    <systemPropertyVariables>
+                        <allure.results.directory>target/allure-results</allure.results.directory>
+                    </systemPropertyVariables>
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -48,6 +51,14 @@
                         <version>1.9.6</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.10.0</version>
+                <configuration>
+                    <reportVersion>2.15.0</reportVersion>
+                </configuration>
             </plugin>
 
         </plugins>
@@ -72,7 +83,6 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit4</artifactId>
             <version>2.14.0</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- Rest Assured-->
