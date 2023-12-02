@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static utils.GlobalVariables.*;
 
+
 public class LogInPagePO {
 
     // поле драйвера

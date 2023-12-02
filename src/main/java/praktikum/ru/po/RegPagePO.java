@@ -26,6 +26,12 @@ public class RegPagePO {
   //кнопка Зарегистрироваться
   private static final By BUTTON_REG = By.xpath(".//button[text() = 'Зарегистрироваться']");
 
+  //текст ошибки при вводе меньше 6 символов в поле пароль
+  private static final String ERROR_TEXT = "Некорректный пароль";
+
+  //элемент ошибки при вводе меньше 6 символов в поле пароль
+    private static final By ERROR = By.xpath("//p[text() = 'Некорректный пароль']");
+
 //конструктор класса
     public RegPagePO(WebDriver driver) {
         this.driver = driver;
@@ -33,8 +39,8 @@ public class RegPagePO {
 
   //ввод имени
 
-   private void fillFieldNameRandomValue(String nameRandom){
-       driver.findElement(NAME).sendKeys(nameRandom);
+   private void fillFieldNameRandomValue(){
+       driver.findElement(NAME).sendKeys(String.format("Марфуша_'%s'", RandomStringUtils.randomNumeric(3)));
    }
 
     //ввод Email
@@ -55,8 +61,8 @@ public class RegPagePO {
 
     //метод регистрации нового пользователя
     @Step("Регистрирует нового пользователя, вводит рандомное Имя, логин и пароль, нажимает на кн Зарегистрироваться")
-  public void registrationNewUser(String nameRandom, String email, String password){
-    fillFieldNameRandomValue(nameRandom);
+  public void registrationNewUser(String email, String password){
+    fillFieldNameRandomValue();
     fillFieldEmailRandomValue(email);
     fillFieldPasswordRandomValue(password);
     clickOnButtonRegistration();
@@ -78,10 +84,11 @@ public class RegPagePO {
         Assert.assertEquals("Регистрация прошла НЕ УСПЕШНО!!!", LOGIN_URL, driver.getCurrentUrl());
     }
 
-    @Step("Пользователь логинится в систему, вводит логин и пароль")
-    public void  logIn(String email, String password){
-        fillFieldEmailRandomValue(email);
-        fillFieldPasswordRandomValue(password);
+    @Step("Проверяет, что при введении пороля менее 6 символов появляется текст ошибки")
+    public void checkErrorRegistration(){
+        new WebDriverWait(driver, WAIT_FIVE)
+                .until(ExpectedConditions.presenceOfElementLocated(ERROR));
+        Assert.assertEquals("Не появилась ошибка -->" + ERROR, ERROR_TEXT,driver.findElement(ERROR).getText());
 
 
 

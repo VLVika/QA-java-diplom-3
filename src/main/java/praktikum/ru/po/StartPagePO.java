@@ -36,11 +36,11 @@ public class StartPagePO {
                 .until(ExpectedConditions.presenceOfElementLocated(CRAT_BUN));
     }
 
-    @Step("Получает токен пользователя")
-    public void getToken(){
+    @Step("Получает токен пользователя с UI")
+    public String getToken(){
         LocalStorage localStorage = ((WebStorage) driver).getLocalStorage();
         String accessToken = localStorage.getItem("accessToken");
-        System.out.println(accessToken);
+        return accessToken;
     }
 
 

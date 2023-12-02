@@ -1,9 +1,14 @@
 package utils;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
+
+ /*
+ метод чтения значений из файла  .properties
+ */
 
 public class GetProperties {
 
@@ -14,5 +19,4 @@ public class GetProperties {
         String prop = properties.getProperty(key);
         return prop;
     }
-
 }
