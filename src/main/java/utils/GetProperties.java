@@ -1,8 +1,6 @@
 package utils;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -12,11 +10,23 @@ import java.util.Properties;
 
 public class GetProperties {
 
-    public static String getProp(String key) throws IOException {
-        File file = new File("src/main/resources/driver.properties");
-        Properties properties = new Properties();
-        properties.load(new FileReader(file));
-        String prop = properties.getProperty(key);
-        return prop;
+
+       static String prop;
+
+        public static String getProp(String key) {
+            FileInputStream fileInputStream;
+            Properties property = new Properties();
+
+            try {
+                fileInputStream = new FileInputStream("src/main/resources/driver.properties");
+                property.load(fileInputStream);
+
+                prop = property.getProperty(key);
+
+            } catch (IOException e) {
+                System.err.println("ОШИБКА: Файл свойств отсутствует!");
+            }
+            return prop;
+        }
     }
-}
+

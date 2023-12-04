@@ -15,18 +15,16 @@ import static utils.GetProperties.getProp;
 public class DriverRule extends ExternalResource {
 
     WebDriver driver;
-    String browser = getProp("browser");
-    String chromeDriver =  getProp("chromeDriver");
-    String chromeBinary = getProp("chromeBinary");
-    String yandexDriver = getProp("yandexDriver");
-    String yandexBinary = getProp("yandexBinary");
+    private final String browser = getProp("browser");
+    private final String chromeDriver =  getProp("chromeDriver");
+    private final String chromeBinary = getProp("chromeBinary");
+    private final String yandexDriver = getProp("yandexDriver");
+    private final String yandexBinary = getProp("yandexBinary");
 
-    public DriverRule() throws IOException {
-    }
 
 
     @Override
-        protected void before() throws Throwable {
+        protected void before() throws IOException {
 
             if ("chrome".equals(browser))
                 setUpChrome();

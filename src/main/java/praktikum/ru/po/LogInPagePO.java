@@ -1,6 +1,7 @@
 package praktikum.ru.po;
 
 import io.qameta.allure.Step;
+import lombok.NoArgsConstructor;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -8,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static utils.GlobalVariables.*;
 
-
+@NoArgsConstructor
 public class LogInPagePO {
 
     // поле драйвера
@@ -20,13 +21,6 @@ public class LogInPagePO {
     //конструктор класса
     public LogInPagePO(WebDriver driver) {
         this.driver = driver;
-    }
-
-    @Step("Открывает страницу Входа")
-    public void openLoginPage()  {
-        driver.get(LOGIN_URL);
-        new WebDriverWait(driver, WAIT_FIVE)
-                .until(ExpectedConditions.presenceOfElementLocated(BUTTON_LOGIN));
     }
 
     //ввод Email
@@ -42,6 +36,18 @@ public class LogInPagePO {
     //нажатие на кн Вход
     private void clickOnButtonLogIn(){
         driver.findElement(BUTTON_LOGIN).click();
+    }
+
+    @Step("Проверяет успешный переход на страницу Входа")
+    public void checkOpenPage(){
+        new WebDriverWait(driver, WAIT_FIVE)
+                .until(ExpectedConditions.presenceOfElementLocated(BUTTON_LOGIN));
+    }
+
+    @Step("Открывает страницу Входа")
+    public void openLoginPage()  {
+        driver.get(LOGIN_URL);
+       checkOpenPage();
     }
 
 

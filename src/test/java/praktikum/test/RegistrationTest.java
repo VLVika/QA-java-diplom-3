@@ -9,9 +9,7 @@ import praktikum.ru.po.LogInPagePO;
 import praktikum.ru.po.RegPagePO;
 import praktikum.ru.po.StartPagePO;
 
-import java.io.IOException;
-
-import static praktikum.ru.api.DeleteUser.deleteUser;
+import static praktikum.ru.api.steps.DeleteUser.deleteUser;
 
 @DisplayName("Регистрация")
 public class RegistrationTest {
@@ -21,15 +19,8 @@ public class RegistrationTest {
 
 
     @Rule
-    public DriverRule driverRule;
+    public DriverRule driverRule = new DriverRule();
 
-    {
-        try {
-            driverRule = new DriverRule();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     @Test
     @DisplayName("Успешная Регистрация нового пользователя")
@@ -52,7 +43,7 @@ public class RegistrationTest {
         logInPagePO.logInUser(emailRandom, passwordRandom);
 
         StartPagePO startPagePO = new StartPagePO(driverRule.getDriver());
-        startPagePO.openStartPage();
+        startPagePO.checkGoToStartPage();
         String token = startPagePO.getToken();
         deleteUser(token);
     }

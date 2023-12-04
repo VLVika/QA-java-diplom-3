@@ -1,25 +1,16 @@
 package utils;
 
+import io.qameta.allure.Step;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
-import io.restassured.config.RestAssuredConfig;
-import io.restassured.filter.Filter;
 import io.restassured.filter.log.LogDetail;
-import io.restassured.http.*;
-import io.restassured.mapper.ObjectMapper;
-import io.restassured.mapper.ObjectMapperType;
-import io.restassured.response.Response;
-import io.restassured.specification.*;
+import io.restassured.http.ContentType;
+import io.restassured.specification.RequestSpecification;
+import io.restassured.specification.ResponseSpecification;
 
-import java.io.File;
-import java.io.InputStream;
-import java.net.URI;
-import java.net.URL;
-import java.security.KeyStore;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
+import static utils.GlobalVariables.BASE_URL;
+import static utils.GlobalVariables.PATH_AUT;
 
 public class Specification {
 
@@ -28,8 +19,8 @@ public class Specification {
                                 .addFilter(new AllureRestAssured())
                                 .setContentType(ContentType.JSON)
                                 .setRelaxedHTTPSValidation()
-                                .setBaseUri("https://stellarburgers.nomoreparties.site/api/")
-                                .setBasePath("auth/")
+                                .setBaseUri(BASE_URL)
+                                .setBasePath(PATH_AUT)
                                 .log(LogDetail.ALL)
                                 .build();
 

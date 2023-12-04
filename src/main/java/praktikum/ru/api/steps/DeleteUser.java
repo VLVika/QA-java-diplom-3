@@ -1,8 +1,10 @@
-package praktikum.ru.api;
+package praktikum.ru.api.steps;
 
 import io.qameta.allure.Step;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+
+import java.net.HttpURLConnection;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
@@ -20,6 +22,7 @@ public class DeleteUser {
                 .delete("user")
                 .then()
                 .spec(RES_SPEC)
+                .statusCode(HttpURLConnection.HTTP_ACCEPTED)
                 .body("success", is(true))
                 .extract().response();
         return response;

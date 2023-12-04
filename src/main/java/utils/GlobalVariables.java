@@ -3,6 +3,14 @@ package utils;
 import org.openqa.selenium.By;
 
 public class GlobalVariables {
+    // ------- URL API Request -------//
+
+    //базовая url для всех запросов
+    public static final String BASE_URL = "https://stellarburgers.nomoreparties.site/api/";
+
+    //путь с аутентификацией
+    public static final String PATH_AUT = "auth/";
+
 
     // -------  ТАЙМАУТЫ -------//
 
@@ -17,6 +25,14 @@ public class GlobalVariables {
     //url страницы Войти
     public static final String LOGIN_URL = "https://stellarburgers.nomoreparties.site/login";
 
+    public static final String START_PAGE_URL = "https://stellarburgers.nomoreparties.site/";
+
+    // кнопка войти в аккаунт
+    public static final By BUTTON_LOGIN_ACC = By.xpath(".//button[text()='Войти в аккаунт']");
+
+    //кнопка личный кабинет
+    public static final By BUTTON_PERS_AC = By.xpath(".//p[text()='Личный Кабинет']");
+
 
     // ------- Переменные полей -------- //
 
@@ -28,5 +44,12 @@ public class GlobalVariables {
 
     // ------ Кнопка Войти ----- //
     public static final By BUTTON_LOGIN = By.xpath(".//button[text() = 'Войти']");
+
+    public static final By BUTTON_LOGIN_ON_REG_PAGE = By.xpath(".//a[text() = 'Войти']");
+
+    // ------- Кнопка Зарегистрироваться  ------//
+
+    public static final By BUTTON_REG = By.xpath(".//button[text() = 'Зарегистрироваться']");
+
 
 }
