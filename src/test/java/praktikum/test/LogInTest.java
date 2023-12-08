@@ -1,30 +1,25 @@
 package praktikum.test;
 
 import io.qameta.allure.junit4.DisplayName;
-import org.junit.*;
+import org.junit.Assert;
+import org.junit.Rule;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.openqa.selenium.By;
-import praktikum.ru.api.pojo.CreateUserModelRq;
-import praktikum.ru.api.steps.CreateUser;
 import praktikum.ru.po.BaseMethodPO;
 import praktikum.ru.po.LogInPagePO;
 import praktikum.ru.po.PersonalAccountPO;
 import praktikum.ru.po.StartPagePO;
 
-import static praktikum.ru.api.steps.DeleteUser.deleteUser;
 import static utils.GlobalVariables.*;
 
-
+@DisplayName("Проверка логина по разным кнопкам")
 @RunWith(Parameterized.class)
-public class LogInTest {
+public class LogInTest extends CreateDeleteUser{
 
-    CreateUser create = new CreateUser();
-    String accessToken;
     String url;
-    String email;
-    String password;
     By button;
     By elementPage;
 
@@ -74,22 +69,5 @@ public class LogInTest {
     }
 
 
-    @Before
-    @DisplayName("Создаёт пользователя, получает token")
-    public void getToken(){
-        var request = CreateUserModelRq.newUser();
-        email= request.getEmail() ;
-        password = request.getPassword();
-        accessToken = create.getTokenNewUser(request);
-
-    }
-
-
-    @DisplayName("Удаляет пользователя")
-    @After
-    public void turnOff(){
-
-        deleteUser(accessToken);
-    }
 
 }

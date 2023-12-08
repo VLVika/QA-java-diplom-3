@@ -22,6 +22,8 @@ public class PersonalAccountPO {
     //gполе email
     private static final By FIELD_EMAIL = By.xpath("(.//input[@name='name'])[1]");
 
+    //кнопка Выйти
+    private static final By BUTTON_LOGOUT = By.xpath(".//button[text()='Выход']");
 
     //конструктор класса
     public PersonalAccountPO(WebDriver driver) {
@@ -39,5 +41,10 @@ public class PersonalAccountPO {
     @Step("Берет текст из поля email")
     public String getTextFromFieldEmail(){
        return driver.findElement(FIELD_EMAIL).getAttribute("value");
+    }
+
+    @Step("Нажимает на кн Выйти")
+    public void clickOnButtonLogOut(){
+        driver.findElement(BUTTON_LOGOUT).click();
     }
 }

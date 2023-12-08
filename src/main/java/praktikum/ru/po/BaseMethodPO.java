@@ -2,7 +2,6 @@ package praktikum.ru.po;
 
 import io.qameta.allure.Step;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.openqa.selenium.By;
@@ -10,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static utils.GlobalVariables.*;
+import static utils.GlobalVariables.WAIT_FIVE;
 
 @Data
 @AllArgsConstructor @NoArgsConstructor
