@@ -1,4 +1,4 @@
-package praktikum.test;
+package praktikum.ru.basemethod;
 
 import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;

@@ -33,6 +33,12 @@ public class GlobalVariables {
     //кнопка личный кабинет
     public static final By BUTTON_PERS_AC = By.xpath(".//p[text()='Личный Кабинет']");
 
+    //кн логотипа сайти Стелла Бургерс
+    public static final By LOGO_STELLA_BURGERS = By.xpath(".//div[@class = 'AppHeader_header__logo__2D0X2']");
+
+    //кн Конструктор
+    public static final By BUTTON_DESIGNER = By.xpath(".//p[text() = 'Конструктор']");
+
 
     // ------- Переменные полей -------- //
 

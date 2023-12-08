@@ -16,8 +16,17 @@ public class StartPagePO {
     private WebDriver driver;
 
 
-// краторная булка
+    // краторная булка
     private static final By CRAT_BUN = By.xpath(".//img[@alt = 'Флюоресцентная булка R2-D3']");
+
+    //кн Соусы в конструкторе
+    private static final By BUTTON_SAUCES = By.xpath(".//span[text()='Соусы']");
+
+    //кн Соусы в конструкторе
+    private static final By BUTTON_FILLING = By.xpath(".//span[text()='Начинки']");
+
+    //кн Соусы в конструкторе
+    private static final By BUTTON_BUNS = By.xpath(".//span[text()='Булки']");
 
     //конструктор класса
     public StartPagePO(WebDriver driver) {

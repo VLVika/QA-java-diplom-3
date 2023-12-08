@@ -3,13 +3,14 @@ package praktikum.test;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Rule;
 import org.junit.Test;
+import praktikum.ru.basemethod.CreateDeleteUser;
 import praktikum.ru.po.LogInPagePO;
 import praktikum.ru.po.PersonalAccountPO;
 import praktikum.ru.po.StartPagePO;
 
 import static utils.GlobalVariables.BUTTON_PERS_AC;
 
-public class LogOut extends CreateDeleteUser{
+public class LogOutTest extends CreateDeleteUser {
 
 
     @Rule

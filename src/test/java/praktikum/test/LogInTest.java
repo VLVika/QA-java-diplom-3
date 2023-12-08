@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.openqa.selenium.By;
+import praktikum.ru.basemethod.CreateDeleteUser;
 import praktikum.ru.po.BaseMethodPO;
 import praktikum.ru.po.LogInPagePO;
 import praktikum.ru.po.PersonalAccountPO;
@@ -17,7 +18,7 @@ import static utils.GlobalVariables.*;
 
 @DisplayName("Проверка логина по разным кнопкам")
 @RunWith(Parameterized.class)
-public class LogInTest extends CreateDeleteUser{
+public class LogInTest extends CreateDeleteUser {
 
     String url;
     By button;
