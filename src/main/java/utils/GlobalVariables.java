@@ -26,16 +26,7 @@ public class GlobalVariables {
     //поле Пароль
     public static final By PASSWORD = By.name("Пароль");
 
-    // ---- Кнопки ----//
 
-    // ------ Кнопка Войти ----- //
-    public static final By BUTTON_LOGIN = By.xpath(".//button[text() = 'Войти']");
-
-    public static final By BUTTON_LOGIN_ON_REG_PAGE = By.xpath(".//a[text() = 'Войти']");
-
-
-    // кнопка войти в аккаунт
-    public static final By BUTTON_LOGIN_ACC = By.xpath(".//button[text()='Войти в аккаунт']");
 
 
 }

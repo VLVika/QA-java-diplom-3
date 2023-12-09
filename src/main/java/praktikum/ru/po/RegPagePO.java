@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static praktikum.ru.po.LogInPagePO.BUTTON_LOGIN;
 import static praktikum.ru.po.LogInPagePO.LOGIN_URL;
 import static utils.GlobalVariables.*;
 
@@ -28,6 +29,9 @@ public class RegPagePO {
 
     //Кнопка Зарегистрироваться
     public static final By BUTTON_REG = By.xpath(".//button[text() = 'Зарегистрироваться']");
+
+    //Кнопка Войти
+    public static final By BUTTON_LOGIN_ON_REG_PAGE = By.xpath(".//a[text() = 'Войти']");
 
     //текст ошибки при вводе меньше 6 символов в поле пароль
     private static final String ERROR_TEXT = "Некорректный пароль";

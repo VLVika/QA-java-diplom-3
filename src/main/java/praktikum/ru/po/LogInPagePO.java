@@ -23,6 +23,9 @@ public class LogInPagePO {
         this.driver = driver;
     }
 
+    // ------ Кнопка Войти ----- //
+    public static final By BUTTON_LOGIN = By.xpath(".//button[text() = 'Войти']");
+
     //url страницы Войти
     public static final String LOGIN_URL = "https://stellarburgers.nomoreparties.site/login";
 

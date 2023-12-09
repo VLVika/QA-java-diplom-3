@@ -27,6 +27,9 @@ public class StartPagePO extends BaseMethodPO {
     //кн Соусы в конструкторе
     public static final By BUTTON_BUNS = By.xpath(".//span[text()='Булки']");
 
+    // кнопка войти в аккаунт
+    public static final By BUTTON_LOGIN_ACC = By.xpath(".//button[text()='Войти в аккаунт']");
+
     //конструктор класса
     public StartPagePO(WebDriver driver) {
         this.driver = driver;
