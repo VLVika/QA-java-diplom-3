@@ -52,12 +52,14 @@ public class DriverRule extends ExternalResource {
 
         public void setUpYandex() {
             ChromeDriverService service = new ChromeDriverService.Builder()
-                    .usingDriverExecutable(new File(yandexDriver))
+                    .usingDriverExecutable(new File(System.getProperty("webdriver.yandex.driver", yandexDriver)))
                     .build();
             ChromeOptions options = new ChromeOptions()
-                    .setBinary(yandexBinary);
+                    .setBinary(System.getProperty("webdriver.yandex.binary", yandexBinary));
 
-            driver = new ChromeDriver(service, options);
+            driver = new ChromeDriver();
+
+
         }
 
     @Override
