@@ -17,14 +17,6 @@ public class GlobalVariables {
     //таймаут 5 секунд
     public static final int WAIT_FIVE = 5;
 
-    // -------- URL СТРАНИЦ РЕГИСТРАЦИИ, ЛОГИНА ---------- //
-
-
-    //url страницы Войти
-    public static final String LOGIN_URL = "https://stellarburgers.nomoreparties.site/login";
-
-
-
 
     // ------- Переменные полей -------- //
 
@@ -45,13 +37,5 @@ public class GlobalVariables {
     // кнопка войти в аккаунт
     public static final By BUTTON_LOGIN_ACC = By.xpath(".//button[text()='Войти в аккаунт']");
 
-    //кнопка личный кабинет
-    public static final By BUTTON_PERS_AC = By.xpath(".//p[text()='Личный Кабинет']");
-
-    //кн логотипа сайти Стелла Бургерс
-    public static final By LOGO_STELLA_BURGERS = By.xpath(".//div[@class = 'AppHeader_header__logo__2D0X2']");
-
-    //кн Конструктор
-    public static final By BUTTON_DESIGNER = By.xpath(".//p[text() = 'Конструктор']");
 
 }

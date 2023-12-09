@@ -7,12 +7,14 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.By;
 import praktikum.ru.basemethod.CreateDeleteUser;
-import praktikum.ru.po.BaseMethodPO;
 import praktikum.ru.po.LogInPagePO;
 import praktikum.ru.po.PersonalAccountPO;
 import praktikum.ru.po.StartPagePO;
+import praktikum.ru.po.ToolBarPO;
 
-import static utils.GlobalVariables.*;
+import static praktikum.ru.po.PersonalAccountPO.BUTTON_PERS_AC;
+import static praktikum.ru.po.ToolBarPO.BUTTON_DESIGNER;
+import static praktikum.ru.po.ToolBarPO.LOGO_STELLA_BURGERS;
 
 
 @DisplayName("Кнопки ToolBar")
@@ -21,13 +23,13 @@ public class ClickButtonOnToolbarTest extends CreateDeleteUser {
 
     By button;
 
-    public ClickButtonOnToolbarTest(By button){
-        this.button=button;
+    public ClickButtonOnToolbarTest(By button) {
+        this.button = button;
     }
 
     @Parameterized.Parameters(name = "{index}: Со страницы Личный кабинет кликаем на кнопку из Toolbar {0}")
-    public static Object[][] getTestsData(){
-        return new Object[][] {
+    public static Object[][] getTestsData() {
+        return new Object[][]{
                 {LOGO_STELLA_BURGERS},
                 {BUTTON_DESIGNER},
         };
@@ -40,11 +42,11 @@ public class ClickButtonOnToolbarTest extends CreateDeleteUser {
 
     @DisplayName("Переход по клику на «Конструктор» и на логотип Stellar Burgers")
     @Test
-    public void clickButtonDesignerOrLogStellarBurgers(){
+    public void clickButtonDesignerOrLogStellarBurgers() {
 
         LogInPagePO logInPage = new LogInPagePO(driverRule.getDriver());
         logInPage.openLoginPage();
-        logInPage.logInUser(email,password);
+        logInPage.logInUser(email, password);
 
         StartPagePO startPage = new StartPagePO(driverRule.driver);
         startPage.checkGoToStartPage();
@@ -53,8 +55,8 @@ public class ClickButtonOnToolbarTest extends CreateDeleteUser {
         PersonalAccountPO persAccountPage = new PersonalAccountPO(driverRule.driver);
         persAccountPage.checkGoToPersonalAcc();
 
-        BaseMethodPO mainToolbar = new BaseMethodPO(driverRule.driver);
-        mainToolbar.clickOnButton(button);
+        ToolBarPO toolBar = new ToolBarPO(driverRule.driver);
+        toolBar.clickOnButton(button);
 
         startPage.checkGoToStartPage();
     }

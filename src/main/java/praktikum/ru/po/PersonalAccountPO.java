@@ -16,6 +16,9 @@ public class PersonalAccountPO {
     // url страницы
     private static final String URL_PERS_ACC = "https://stellarburgers.nomoreparties.site/account/profile";
 
+    //кнопка личный кабинет
+    public static final By BUTTON_PERS_AC = By.xpath(".//p[text()='Личный Кабинет']");
+
     //кнопка Профиль
     private static final By BUTTON_PROFILE = By.xpath(".//a[text()='Профиль']");
 
@@ -32,19 +35,19 @@ public class PersonalAccountPO {
 
     //метод проверяющий, что отображается страница личного кабинета
     @Step("Проверяет, что находится на странице Личного Кабинета")
-    public void checkGoToPersonalAcc(){
+    public void checkGoToPersonalAcc() {
         new WebDriverWait(driver, WAIT_FIVE)
                 .until(ExpectedConditions.presenceOfElementLocated(BUTTON_PROFILE));
     }
 
     //берет текст email
     @Step("Берет текст из поля email")
-    public String getTextFromFieldEmail(){
-       return driver.findElement(FIELD_EMAIL).getAttribute("value");
+    public String getTextFromFieldEmail() {
+        return driver.findElement(FIELD_EMAIL).getAttribute("value");
     }
 
     @Step("Нажимает на кн Выйти")
-    public void clickOnButtonLogOut(){
+    public void clickOnButtonLogOut() {
         driver.findElement(BUTTON_LOGOUT).click();
     }
 }

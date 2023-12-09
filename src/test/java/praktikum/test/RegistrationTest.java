@@ -37,14 +37,14 @@ public class RegistrationTest {
 
     @DisplayName("Метод удаления пользователя")
     @After
-    public void turnOff(){
+    public void turnOff() {
 
-        LogInPagePO logInPagePO = new LogInPagePO(driverRule.getDriver());
-        logInPagePO.logInUser(emailRandom, passwordRandom);
+        LogInPagePO logInPage = new LogInPagePO(driverRule.getDriver());
+        logInPage.logInUser(emailRandom, passwordRandom);
 
-        StartPagePO startPagePO = new StartPagePO(driverRule.getDriver());
-        startPagePO.checkGoToStartPage();
-        String token = startPagePO.getToken();
+        StartPagePO startPage = new StartPagePO(driverRule.getDriver());
+        startPage.checkGoToStartPage();
+        String token = startPage.getToken();
         deleteUser(token);
     }
 

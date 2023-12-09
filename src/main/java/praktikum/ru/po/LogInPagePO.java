@@ -23,42 +23,43 @@ public class LogInPagePO {
         this.driver = driver;
     }
 
+    //url страницы Войти
+    public static final String LOGIN_URL = "https://stellarburgers.nomoreparties.site/login";
+
     //ввод Email
-    private void fillFieldEmailRandomValue(String email){
+    private void fillFieldEmailRandomValue(String email) {
         driver.findElement(EMAIL).sendKeys(email);
     }
 
     //ввод Пароль
-    private void fillFieldPasswordRandomValue(String password){
+    private void fillFieldPasswordRandomValue(String password) {
         driver.findElement(PASSWORD).sendKeys(password);
     }
 
     //нажатие на кн Вход
-    private void clickOnButtonLogIn(){
+    private void clickOnButtonLogIn() {
         driver.findElement(BUTTON_LOGIN).click();
     }
 
     @Step("Проверяет успешный переход на страницу Входа")
-    public void checkOpenPage(){
+    public void checkOpenPage() {
         new WebDriverWait(driver, WAIT_FIVE)
                 .until(ExpectedConditions.presenceOfElementLocated(BUTTON_LOGIN));
     }
 
     @Step("Открывает страницу Входа")
-    public void openLoginPage()  {
+    public void openLoginPage() {
         driver.get(LOGIN_URL);
-       checkOpenPage();
+        checkOpenPage();
     }
 
 
     @Step("Входит в личный кабинет, вводит емейл и пароль, нажимает на кн Войти")
-    public void logInUser(String email, String password){
+    public void logInUser(String email, String password) {
         fillFieldEmailRandomValue(email);
         fillFieldPasswordRandomValue(password);
         clickOnButtonLogIn();
     }
-
-
 
 
 }

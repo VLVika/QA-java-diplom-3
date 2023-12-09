@@ -12,7 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static utils.GlobalVariables.WAIT_FIVE;
 
 @Data
-@AllArgsConstructor @NoArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 public class BaseMethodPO {
 
     // поле драйвера
@@ -20,7 +21,7 @@ public class BaseMethodPO {
 
     //Метод открытия страницы
     @Step("Открывает страницу {url}")
-    public void openPage(String url, By expectedElement)  {
+    public void openPage(String url, By expectedElement) {
         driver.get(url);
         new WebDriverWait(driver, WAIT_FIVE)
                 .until(ExpectedConditions.presenceOfElementLocated(expectedElement));
@@ -29,7 +30,7 @@ public class BaseMethodPO {
 
     //Метод нажатия на кнопку
     @Step("Нажимает кнопку {button}")
-    public void clickOnButton(By button){
+    public void clickOnButton(By button) {
         driver.findElement(button).click();
     }
 }

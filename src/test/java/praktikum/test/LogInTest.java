@@ -14,10 +14,12 @@ import praktikum.ru.po.LogInPagePO;
 import praktikum.ru.po.PersonalAccountPO;
 import praktikum.ru.po.StartPagePO;
 
+import static praktikum.ru.po.PersonalAccountPO.BUTTON_PERS_AC;
 import static praktikum.ru.po.RegPagePO.BUTTON_REG;
 import static praktikum.ru.po.RegPagePO.REG_PAGE_URL;
 import static praktikum.ru.po.StartPagePO.START_PAGE_URL;
-import static utils.GlobalVariables.*;
+import static utils.GlobalVariables.BUTTON_LOGIN_ACC;
+import static utils.GlobalVariables.BUTTON_LOGIN_ON_REG_PAGE;
 
 @DisplayName("Проверка логина по разным кнопкам")
 @RunWith(Parameterized.class)

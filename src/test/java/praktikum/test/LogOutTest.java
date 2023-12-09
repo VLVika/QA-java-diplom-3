@@ -8,7 +8,7 @@ import praktikum.ru.po.LogInPagePO;
 import praktikum.ru.po.PersonalAccountPO;
 import praktikum.ru.po.StartPagePO;
 
-import static utils.GlobalVariables.BUTTON_PERS_AC;
+import static praktikum.ru.po.PersonalAccountPO.BUTTON_PERS_AC;
 
 public class LogOutTest extends CreateDeleteUser {
 
@@ -21,19 +21,19 @@ public class LogOutTest extends CreateDeleteUser {
     @Test
     public void goToPersonalAccount() {
 
-        LogInPagePO logInPagePO = new LogInPagePO(driverRule.getDriver());
-        logInPagePO.openLoginPage();
-        logInPagePO.logInUser(email, password);
+        LogInPagePO logInPage = new LogInPagePO(driverRule.getDriver());
+        logInPage.openLoginPage();
+        logInPage.logInUser(email, password);
 
-        StartPagePO startPagePO = new StartPagePO(driverRule.driver);
-        startPagePO.checkGoToStartPage();
-        startPagePO.clickOnButton(BUTTON_PERS_AC);
+        StartPagePO startPage = new StartPagePO(driverRule.driver);
+        startPage.checkGoToStartPage();
+        startPage.clickOnButton(BUTTON_PERS_AC);
 
-        PersonalAccountPO perslAccPO = new PersonalAccountPO(driverRule.driver);
-        perslAccPO.checkGoToPersonalAcc();
-        perslAccPO.clickOnButtonLogOut();
+        PersonalAccountPO perslAccount = new PersonalAccountPO(driverRule.driver);
+        perslAccount.checkGoToPersonalAcc();
+        perslAccount.clickOnButtonLogOut();
 
-        logInPagePO.checkOpenPage();
+        logInPage.checkOpenPage();
 
 
     }

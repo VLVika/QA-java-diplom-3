@@ -17,14 +17,14 @@ public class ClickOnNameSectionsInConstructorTest {
     By button;
     By bunsButton;
 
-    public ClickOnNameSectionsInConstructorTest(By button, By bunsButton){
-        this.button=button;
+    public ClickOnNameSectionsInConstructorTest(By button, By bunsButton) {
+        this.button = button;
         this.bunsButton = bunsButton;
     }
 
     @Parameterized.Parameters(name = "{index}: В Конструкторе переходим в раздел {0}, затем в раздел {1}")
-    public static Object[][] getTestsData(){
-        return new Object[][] {
+    public static Object[][] getTestsData() {
+        return new Object[][]{
                 {BUTTON_SAUCES, BUTTON_BUNS},
                 {BUTTON_FILLING, BUTTON_BUNS},
         };

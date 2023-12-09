@@ -14,7 +14,7 @@ import static utils.Specification.RES_SPEC;
 public class DeleteUser {
 
     @Step("Удаляет пользователя")
-    public static Response deleteUser(String token){
+    public static Response deleteUser(String token) {
         Response response = given()
                 .spec(REQ_SPEC)
                 .header("Authorization", token)

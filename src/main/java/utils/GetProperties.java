@@ -11,22 +11,22 @@ import java.util.Properties;
 public class GetProperties {
 
 
-       static String prop;
+    static String prop;
 
-        public static String getProp(String key) {
-            FileInputStream fileInputStream;
-            Properties property = new Properties();
+    public static String getProp(String key) {
+        FileInputStream fileInputStream;
+        Properties property = new Properties();
 
-            try {
-                fileInputStream = new FileInputStream("src/main/resources/driver.properties");
-                property.load(fileInputStream);
+        try {
+            fileInputStream = new FileInputStream("src/main/resources/driver.properties");
+            property.load(fileInputStream);
 
-                prop = property.getProperty(key);
+            prop = property.getProperty(key);
 
-            } catch (IOException e) {
-                System.err.println("ОШИБКА: Файл свойств отсутствует!");
-            }
-            return prop;
+        } catch (IOException e) {
+            System.err.println("ОШИБКА: Файл свойств отсутствует!");
         }
+        return prop;
     }
+}
 

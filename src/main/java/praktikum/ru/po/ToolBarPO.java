@@ -1,21 +1,19 @@
 package praktikum.ru.po;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-@Data
-@AllArgsConstructor @NoArgsConstructor
-public class ToolBarPO {
 
-    // поле драйвера
-    private WebDriver driver;
+public class ToolBarPO extends BaseMethodPO {
+
 
     //кн логотипа сайти Стелла Бургерс
-    private static By LOGO_STELLA_BURGERS = By.xpath(".//div[@class = 'AppHeader_header__logo__2D0X2']");
+    public static final By LOGO_STELLA_BURGERS = By.xpath(".//div[@class = 'AppHeader_header__logo__2D0X2']");
 
     //кн Конструктор
-    private static By BUTTON_DESIGNER = By.xpath(".//p[text() = 'Конструктор']");
+    public static final By BUTTON_DESIGNER = By.xpath(".//p[text() = 'Конструктор']");
+
+    public ToolBarPO(WebDriver driver) {
+        this.driver = driver;
+    }
 }

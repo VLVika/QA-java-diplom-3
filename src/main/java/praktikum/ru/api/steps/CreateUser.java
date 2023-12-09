@@ -13,7 +13,7 @@ import static utils.Specification.RES_SPEC;
 public class CreateUser {
 
     @Step("Создаёт пользователя")
-    public String getTokenNewUser(CreateUserPojoRq request){
+    public String getTokenNewUser(CreateUserPojoRq request) {
         return given()
                 .spec(REQ_SPEC)
                 .when()
