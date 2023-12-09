@@ -14,6 +14,9 @@ import praktikum.ru.po.LogInPagePO;
 import praktikum.ru.po.PersonalAccountPO;
 import praktikum.ru.po.StartPagePO;
 
+import static praktikum.ru.po.RegPagePO.BUTTON_REG;
+import static praktikum.ru.po.RegPagePO.REG_PAGE_URL;
+import static praktikum.ru.po.StartPagePO.START_PAGE_URL;
 import static utils.GlobalVariables.*;
 
 @DisplayName("Проверка логина по разным кнопкам")
@@ -33,7 +36,7 @@ public class LogInTest extends CreateDeleteUser {
 
 
 
-    @Parameters
+    @Parameters(name = "{index}: Логинится через кн Вход со страницы {1}")
     public static Object[][] getTestsData(){
         return new Object[][] {
                 {START_PAGE_URL, BUTTON_PERS_AC, BUTTON_PERS_AC},
@@ -50,23 +53,23 @@ public class LogInTest extends CreateDeleteUser {
 
     @DisplayName("Проверяет вход в приложение через {elementPage}")
     @Test
-    public void switchFromDifferentButton() throws InterruptedException {
-        BaseMethodPO baseMethodPO = new BaseMethodPO(driverRule.getDriver());
-        baseMethodPO.openPage(url, button);
-        baseMethodPO.clickOnButton(elementPage);
+    public void switchFromDifferentButton() {
+        BaseMethodPO rightPageNow = new BaseMethodPO(driverRule.getDriver());
+        rightPageNow.openPage(url, button);
+        rightPageNow.clickOnButton(elementPage);
 
-        LogInPagePO logInPagePO = new LogInPagePO(driverRule.driver);
-        logInPagePO.checkOpenPage();
-        logInPagePO.logInUser(email, password);
+        LogInPagePO logInPage = new LogInPagePO(driverRule.driver);
+        logInPage.checkOpenPage();
+        logInPage.logInUser(email, password);
 
-        StartPagePO startPagePO = new StartPagePO(driverRule.driver);
-        startPagePO.checkGoToStartPage();
-        startPagePO.clickOnButton(BUTTON_PERS_AC);
+        StartPagePO startPage = new StartPagePO(driverRule.driver);
+        startPage.checkGoToStartPage();
+        startPage.clickOnButton(BUTTON_PERS_AC);
 
-        PersonalAccountPO persAccMO = new PersonalAccountPO(driverRule.driver);
-        persAccMO.checkGoToPersonalAcc();
+        PersonalAccountPO persAccount = new PersonalAccountPO(driverRule.driver);
+        persAccount.checkGoToPersonalAcc();
 
-        Assert.assertEquals("Ошибка! Не получилось залогиниться по кнопке --->" + button, email, persAccMO.getTextFromFieldEmail());
+        Assert.assertEquals("Ошибка! Не получилось залогиниться по кнопке --->" + button, email, persAccount.getTextFromFieldEmail());
     }
 
 

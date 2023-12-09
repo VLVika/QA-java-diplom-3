@@ -25,7 +25,7 @@ public class ClickButtonOnToolbarTest extends CreateDeleteUser {
         this.button=button;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "{index}: Со страницы Личный кабинет кликаем на кнопку из Toolbar {0}")
     public static Object[][] getTestsData(){
         return new Object[][] {
                 {LOGO_STELLA_BURGERS},

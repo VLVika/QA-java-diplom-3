@@ -16,7 +16,7 @@ import static utils.GlobalVariables.WAIT_FIVE;
 public class BaseMethodPO {
 
     // поле драйвера
-    private WebDriver driver;
+    protected WebDriver driver;
 
     //Метод открытия страницы
     @Step("Открывает страницу {url}")

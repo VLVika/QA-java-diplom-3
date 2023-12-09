@@ -16,6 +16,8 @@ public class RegPagePO {
    // поле драйвера
     private WebDriver driver;
 
+    //url страницы регистрации
+    public static final String REG_PAGE_URL = "https://stellarburgers.nomoreparties.site/register";
 
   //форма регистрации с полями
     private static final By FORM_REG = By.xpath(".//form[@class = 'Auth_form__3qKeq mb-20']");
@@ -23,8 +25,8 @@ public class RegPagePO {
   //поле Имя
   private static final By NAME = By.xpath(".//input[@name = 'name']");
 
-  //кнопка Зарегистрироваться
-  private static final By BUTTON_REG = By.xpath(".//button[text() = 'Зарегистрироваться']");
+    //Кнопка Зарегистрироваться
+    public static final By BUTTON_REG = By.xpath(".//button[text() = 'Зарегистрироваться']");
 
   //текст ошибки при вводе меньше 6 символов в поле пароль
   private static final String ERROR_TEXT = "Некорректный пароль";
