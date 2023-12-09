@@ -10,6 +10,7 @@ import praktikum.ru.po.StartPagePO;
 
 import static praktikum.ru.po.PersonalAccountPO.BUTTON_PERS_AC;
 
+@DisplayName("Выход из ЛК")
 public class LogOutTest extends CreateDeleteUser {
 
 

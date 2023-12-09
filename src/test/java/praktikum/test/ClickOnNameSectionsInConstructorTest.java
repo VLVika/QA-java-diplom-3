@@ -34,6 +34,7 @@ public class ClickOnNameSectionsInConstructorTest {
     @Rule
     public DriverRule driverRule = new DriverRule();
 
+    @DisplayName("Проверка перехода в разделы Конструктора")
     @Test
     public void clickOnNameSectionsInConstructorTest() {
         StartPagePO startPage = new StartPagePO(driverRule.getDriver());

@@ -51,7 +51,7 @@ public class LogInTest extends CreateDeleteUser {
     public DriverRule driverRule = new DriverRule();
 
 
-    @DisplayName("Проверяет вход в приложение через {elementPage}")
+    @DisplayName("Проверяет вход в приложение через кн Вход")
     @Test
     public void switchFromDifferentButton() {
         BaseMethodPO rightPageNow = new BaseMethodPO(driverRule.getDriver());
