@@ -17,8 +17,7 @@ QA Java Project stellarburgers
 9. jackson-databind 2.12.5
 10. selenium-java 3.141.59
 11. rest-assured 4.5.0
-12. junit 4.13.2
-13. lombok 1.18.26
+12. lombok 1.18.26
 
 
 Запуск тестов:

@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CreateUserPojoRq {
 
-    public String email;
-    public String password;
-    public String name;
+    private String email;
+    private String password;
+    private String name;
 
 }
